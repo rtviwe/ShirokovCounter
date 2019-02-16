@@ -1,0 +1,31 @@
+name: shirokov_counter
+description: Shirokov Counter.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  shared_preferences: ^0.5.1
+
+dev_dependencies:
+  flutter_launcher_icons: "^0.7.0"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/shirokov.png"
+
+flutter_test:
+  sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/

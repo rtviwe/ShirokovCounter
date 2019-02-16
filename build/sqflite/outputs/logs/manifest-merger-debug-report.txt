@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml:1:1-53
+INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml:1:1-53
+INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml:1:1-53
+	package
+		ADDED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml:1:11-41
+		INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+		INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml:1:1-53
+uses-sdk
+INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+		ADDED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml
+		INJECTED from /home/rtviwe/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.0/android/src/main/AndroidManifest.xml

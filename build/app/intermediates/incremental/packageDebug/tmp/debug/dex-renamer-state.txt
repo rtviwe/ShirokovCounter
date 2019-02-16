@@ -1,0 +1,4 @@
+#Sat Feb 16 22:42:00 MSK 2019
+base.0=/home/rtviwe/StudioProjects/shirokov_counter/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
