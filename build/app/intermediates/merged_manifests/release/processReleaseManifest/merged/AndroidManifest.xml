@@ -24,7 +24,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/launcher_icon"
-        android:label="shirokov_counter" >
+        android:label="Широков" >
         <activity
             android:name="com.example.shirokovcounter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"

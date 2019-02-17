@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/rtviwe/StudioProjects/shirokov_counter/build/app/intermediates/res/merged/release/values_values.arsc.flat",
+            "outputFile": "/home/rtviwe/StudioProjects/shirokov_counter/ShirokovCounter/build/app/intermediates/res/merged/release/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/rtviwe/StudioProjects/shirokov_counter/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/rtviwe/StudioProjects/shirokov_counter/ShirokovCounter/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
