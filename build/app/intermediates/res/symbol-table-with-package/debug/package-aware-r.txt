@@ -1,5 +1,0 @@
-com.example.shirokovcounter
-drawable launch_background
-mipmap ic_launcher
-mipmap launcher_icon
-style LaunchTheme
