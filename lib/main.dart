@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shirokov_counter/constants.dart';
@@ -26,15 +28,24 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   int _counterYasno = 0;
   int _counterPonyatno = 0;
   int _counterDa = 0;
+
+  bool shirokovState = false;
+
+  AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
     _setCounters();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
   }
 
   Future<void> _setCounters() async {
@@ -66,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementYasno() {
+    _animateShirokov();
     setState(() {
       _incrementCounter(YASNO);
       _counterYasno++;
@@ -73,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementPonyatno() {
+    _animateShirokov();
     setState(() {
       _incrementCounter(PONYATNO);
       _counterPonyatno++;
@@ -80,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementDa() {
+    _animateShirokov();
     setState(() {
       _incrementCounter(DA);
       _counterDa++;
@@ -93,6 +107,19 @@ class _MyHomePageState extends State<MyHomePage> {
     await prefs.setInt(key, counter);
   }
 
+  Future<Null> _animateShirokov() async {
+    try {
+      if (shirokovState) {
+        await _animationController.forward();
+        await _animationController.reverse();
+      } else {
+        await _animationController.forward();
+      }
+    } on TickerCanceled {} finally {
+      shirokovState = !shirokovState;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +130,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/shirokov.png'),
+            AnimatedBuilder(
+              animation: _animationController,
+              builder: (BuildContext context, Widget _widget) {
+                return Transform.rotate(
+                  angle: _animationController.value * 2 * pi,
+                  child: Image.asset('assets/shirokov.png'),
+                );
+              },
+            ),
             RaisedButton(
               child: Text('Ясно $_counterYasno'),
               onPressed: _incrementYasno,
