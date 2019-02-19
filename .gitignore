@@ -1,7 +1,4 @@
 /.packages
-/android/
-/ios/
 /.idea/
-/test/
-/build/
 !/.idea/
+Будет удалено .idea/

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shirokov_counter/constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Широков',
+      title: TITLE,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Широков'),
+      home: MyHomePage(title: TITLE),
     );
   }
 }
@@ -30,62 +31,57 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counterPonyatno = 0;
   int _counterDa = 0;
 
-  final String yasno = 'yasno';
-  final String ponyatno = 'ponyatno';
-  final String da = 'da';
-
   @override
   void initState() {
     super.initState();
-
     _setCounters();
   }
 
   Future<void> _setCounters() async {
     final prefs = await SharedPreferences.getInstance();
-    int counterYasno = prefs.getInt(yasno);
-    int counterPonyatno = prefs.getInt(ponyatno);
-    int counterDa = prefs.getInt(da);
+    int counterYasno = prefs.getInt(YASNO);
+    int counterPonyatno = prefs.getInt(PONYATNO);
+    int counterDa = prefs.getInt(DA);
 
     if (counterYasno == null) {
-      prefs.setInt(yasno, 0);
+      prefs.setInt(YASNO, 0);
     }
     setState(() {
-      _counterYasno = prefs.getInt(yasno);
+      _counterYasno = prefs.getInt(YASNO);
     });
 
     if (counterPonyatno == null) {
-      prefs.setInt(ponyatno, 0);
+      prefs.setInt(PONYATNO, 0);
     }
     setState(() {
-      _counterPonyatno = prefs.getInt(ponyatno);
+      _counterPonyatno = prefs.getInt(PONYATNO);
     });
 
     if (counterDa == null) {
-      prefs.setInt(da, 0);
+      prefs.setInt(DA, 0);
     }
     setState(() {
-      _counterDa = prefs.getInt(da);
+      _counterDa = prefs.getInt(DA);
     });
   }
 
   void _incrementYasno() {
     setState(() {
-      _incrementCounter(yasno);
+      _incrementCounter(YASNO);
       _counterYasno++;
     });
   }
 
   void _incrementPonyatno() {
     setState(() {
-      _incrementCounter(ponyatno);
+      _incrementCounter(PONYATNO);
       _counterPonyatno++;
     });
   }
 
   void _incrementDa() {
     setState(() {
-      _incrementCounter(da);
+      _incrementCounter(DA);
       _counterDa++;
     });
   }
@@ -107,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //'$_counterYasno'
+            Image.asset('assets/shirokov.png'),
             RaisedButton(
               child: Text('Ясно $_counterYasno'),
               onPressed: _incrementYasno,
